@@ -10,4 +10,6 @@ public interface Calculator {
 
     int division(int a, int b);
 
+    int modulo(int a, int b);
+
 }
