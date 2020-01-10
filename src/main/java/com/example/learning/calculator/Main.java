@@ -39,7 +39,7 @@ public class Main {
     }
 
     private static void printInfo() {
-        System.out.println("*************************************************");
+        System.out.println("******************************************************************");
         System.out.println("Chose operation: 1(+), 2(-), 3(*), 4(/), 5(%) other number to exit");
         System.out.print("Enter: ");
 
@@ -68,8 +68,13 @@ public class Main {
 
     private static void divisionOperation(Scanner scanner, Calculator calculator) {
         int[] twoNumbersFromInput = getTwoNumbersFromInput(scanner);
-        int result = calculator.division(twoNumbersFromInput[0], twoNumbersFromInput[1]);
-        printResult(twoNumbersFromInput[0], twoNumbersFromInput[1], "/", result);
+
+        if (twoNumbersFromInput[1] == 0) {
+            System.out.println("Pamiętaj cholero nie dziel przez zero!");
+        } else {
+            int result = calculator.division(twoNumbersFromInput[0], twoNumbersFromInput[1]);
+            printResult(twoNumbersFromInput[0], twoNumbersFromInput[1], "/", result);
+        }
 
     }
 
